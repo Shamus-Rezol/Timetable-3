@@ -1,6 +1,6 @@
 import os.path, json
 
-DEFAULT=dict(groups=["11исип202"], departaments=["информ"])
+DEFAULT=dict(groups=["11исип202"], departaments=["информ"], notepad="notepad.exe")
 
 class Preferences(object):
 	"""Объект конфигурации предпочтений.
@@ -38,6 +38,11 @@ class Preferences(object):
 						self.departaments=data["departaments"]
 					else:
 						self.departaments=DEFAULT["departaments"]
+
+					if "notepad" in data.keys():
+						self.notepad=data["notepad"]
+					else:
+						self.notepad=DEFAULT["notepad"]
 			except:
 				import panic, traceback
 				whats="[ preferences.json ] Ошибка чтения файла предпочтений:"

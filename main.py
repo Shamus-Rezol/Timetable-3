@@ -7,7 +7,7 @@
 # TODO Прокрутка при появлении новых конвертированых документов.
 # TODO Исправить имена функций
 
-__version__ = "3.0.0"
+__version__ = "3.1.0"
 __author__  = "Shamus Rezol"
 
 DOCS_FILE="documents.json"
@@ -115,8 +115,7 @@ def show_departament(doc, dep):
 			fp.write(doc.name+'\n\n')
 			fp.write(data if data != None else "Не найдена ни одна группа из '%s'."%PREFS_FILE)
 
-		NOTEPAD="D:/Program Files/Sublime Text 3/sublime_text.exe"
-		subprocess.Popen((NOTEPAD, path))
+		subprocess.Popen((prefs.notepad, path))
 	except:
 		raise
 
@@ -146,8 +145,7 @@ def view_departaments(document_names, departaments):
 				fp.write(doc_name+'\n\n')
 				fp.write(data+'\n\n' if data != None else "Не найдена ни одна группа из '%s'."%PREFS_FILE)
 
-		NOTEPAD="D:/Program Files/Sublime Text 3/sublime_text.exe"
-		subprocess.Popen((NOTEPAD, path))
+		subprocess.Popen((prefs.notepad, path))
 	except:
 		raise
 
